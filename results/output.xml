@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-03-16T15:29:59.399647" rpa="false" schemaversion="5">
+<suite id="s1" name="01 Login Test" source="D:\Repositories\Robot-Framework-Tests\tests\01_login_test.robot">
+<test id="s1-t1" name="Sikeres Bejelentkezes" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-16T15:29:59.560625" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-16T15:29:59.560378" elapsed="1.812293"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-16T15:30:01.373799" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-16T15:30:01.373304" elapsed="0.111597"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-03-16T15:30:01.485749" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-03-16T15:30:01.511875" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-16T15:30:01.485419" elapsed="0.065371"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-16T15:30:01.551237" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-16T15:30:01.551062" elapsed="0.088595"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-16T15:30:01.656452" level="INFO">Element 'class:title' is displayed.</msg>
+<arg>class:title</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-16T15:30:01.639971" elapsed="0.016581"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-16T15:30:01.656958" elapsed="2.135373"/>
+</kw>
+<status status="PASS" start="2026-03-16T15:29:59.559369" elapsed="4.233166"/>
+</test>
+<status status="PASS" start="2026-03-16T15:29:59.400942" elapsed="4.392379"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="01 Login Test" id="s1" pass="1" fail="0" skip="0">01 Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

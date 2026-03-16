@@ -1,54 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-03-16T15:29:59.399647" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-03-16T16:02:10.678879" rpa="false" schemaversion="5">
 <suite id="s1" name="01 Login Test" source="D:\Repositories\Robot-Framework-Tests\tests\01_login_test.robot">
-<test id="s1-t1" name="Sikeres Bejelentkezes" line="9">
+<test id="s1-t1" name="Felhasznalo sikeresen be tud jelentkezni" line="7">
+<kw name="Bejelentkezes Az Oldalra" owner="keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-03-16T15:29:59.560625" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2026-03-16T16:02:10.877058" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-03-16T15:29:59.560378" elapsed="1.812293"/>
+<status status="PASS" start="2026-03-16T16:02:10.876840" elapsed="1.324428"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-16T16:02:12.201484" elapsed="0.032868"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-16T15:30:01.373799" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
-<arg>id:user-name</arg>
-<arg>standard_user</arg>
+<msg time="2026-03-16T16:02:12.234920" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${USER_FIELD}</arg>
+<arg>${user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-16T15:30:01.373304" elapsed="0.111597"/>
+<status status="PASS" start="2026-03-16T16:02:12.234536" elapsed="0.093886"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2026-03-16T15:30:01.485749" level="INFO">Typing password into text field 'id:password'.</msg>
-<msg time="2026-03-16T15:30:01.511875" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>id:password</arg>
-<arg>secret_sauce</arg>
+<msg time="2026-03-16T16:02:12.329047" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-03-16T16:02:12.355667" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASS_FIELD}</arg>
+<arg>${pass}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-16T15:30:01.485419" elapsed="0.065371"/>
+<status status="PASS" start="2026-03-16T16:02:12.328693" elapsed="0.067243"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-03-16T15:30:01.551237" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
+<msg time="2026-03-16T16:02:12.396334" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${LOGIN_BTN}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-16T15:30:01.551062" elapsed="0.088595"/>
+<status status="PASS" start="2026-03-16T16:02:12.396100" elapsed="0.082762"/>
 </kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-03-16T16:02:10.876156" elapsed="1.602832"/>
+</kw>
+<kw name="Sikeres Bejelentkezes Ellenorzese" owner="keywords">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-03-16T15:30:01.656452" level="INFO">Element 'class:title' is displayed.</msg>
-<arg>class:title</arg>
+<msg time="2026-03-16T16:02:12.496561" level="INFO">Element 'class:title' is displayed.</msg>
+<arg>${HEADER_LABEL}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-16T15:30:01.639971" elapsed="0.016581"/>
+<status status="PASS" start="2026-03-16T16:02:12.479652" elapsed="0.017022"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-03-16T16:02:12.497066" level="INFO">Verifying element 'class:title' contains exact text 'Products'.</msg>
+<arg>${HEADER_LABEL}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-03-16T16:02:12.496842" elapsed="0.016103"/>
+</kw>
+<status status="PASS" start="2026-03-16T16:02:12.479334" elapsed="0.033734"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-03-16T15:30:01.656958" elapsed="2.135373"/>
+<status status="PASS" start="2026-03-16T16:02:12.513452" elapsed="2.143544"/>
 </kw>
-<status status="PASS" start="2026-03-16T15:29:59.559369" elapsed="4.233166"/>
+<tag>Login</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2026-03-16T16:02:10.875490" elapsed="3.781758"/>
 </test>
-<status status="PASS" start="2026-03-16T15:29:59.400942" elapsed="4.392379"/>
+<doc>SauceDemo bejelentkezés moduláris felépítéssel.</doc>
+<status status="PASS" start="2026-03-16T16:02:10.681865" elapsed="3.976102"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
 </tag>
 <suite>
 <stat name="01 Login Test" id="s1" pass="1" fail="0" skip="0">01 Login Test</stat>
